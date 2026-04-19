@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevuPing 🚀</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="Keep your server alive with automated URL pings." />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-icon">🚀</div>
+          <div>
+            <h1>DevuPing</h1>
+            <p>Keep your server alive</p>
+          </div>
+        </div>
+        <button id="logoutButton" class="ghost-button hidden">Log out</button>
+      </header>
+
+      <main>
+        <section class="hero-card" id="heroSection">
+          <div class="hero-copy">
+            <span class="eyebrow">Fast. Simple. Reliable.</span>
+            <h2>Keep your backend awake with automated pings.</h2>
+            <p>Enter a URL, choose an interval, and DevuPing will keep your server online. Login only when you need to start a ping.</p>
+          </div>
+
+          <div class="hero-panel card">
+            <div class="panel-header">
+              <h3>Start a ping</h3>
+              <p>Login only when you press Start.</p>
+            </div>
+            <label>
+              URL
+              <input id="homeUrlInput" type="url" placeholder="https://example.com" />
+            </label>
+            <label>
+              Interval
+              <select id="homeIntervalSelect">
+                <option value="60">1 minute</option>
+                <option value="300">5 minutes</option>
+                <option value="600">10 minutes</option>
+              </select>
+            </label>
+            <button id="homeStartButton" class="primary-button">Start ping</button>
+          </div>
+        </section>
+
+        <section id="dashboardSection" class="dashboard hidden">
+          <div class="dashboard-grid">
+            <div class="card profile-card">
+              <div class="profile-meta">
+                <img id="profilePicture" src="" alt="User avatar" />
+                <div>
+                  <h3 id="profileName">User Name</h3>
+                  <p id="profileEmail">email@example.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card new-job-card">
+              <h3>Start a new ping</h3>
+              <label>
+                URL
+                <input id="dashUrlInput" type="url" placeholder="https://example.com" />
+              </label>
+              <label>
+                Interval
+                <select id="dashIntervalSelect">
+                  <option value="60">1 minute</option>
+                  <option value="300">5 minutes</option>
+                  <option value="600">10 minutes</option>
+                </select>
+              </label>
+              <button id="dashStartButton" class="primary-button">Start new ping</button>
+            </div>
+          </div>
+
+          <div class="card jobs-card">
+            <div class="card-header">
+              <h3>Your Active Jobs</h3>
+              <span id="jobCount">0 jobs</span>
+            </div>
+            <div id="jobsList" class="jobs-list"></div>
+          </div>
+        </section>
+      </main>
+
+      <div id="toast" class="toast hidden"></div>
+    </div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer onload="window.onGoogleScriptLoad && window.onGoogleScriptLoad()"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
